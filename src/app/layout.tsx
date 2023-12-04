@@ -5,6 +5,7 @@ import "@fontsource/roboto/700.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
+import TabbedNavigation from "@/components/TabbedNavigation";
 import ThemeRegistry from "./ThemeRegistry";
 
 export const metadata: Metadata = {
@@ -19,8 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <ThemeRegistry options={{ key: "mui" }}>{children}</ThemeRegistry>
+      <body className="container">
+        <ThemeRegistry options={{ key: "mui" }}>
+          <TabbedNavigation />
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );

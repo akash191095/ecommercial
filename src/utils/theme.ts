@@ -15,7 +15,7 @@ export const themeOptions: ThemeOptions = createTheme({
       paper: "#0b0c22",
     },
     text: {
-      secondary: "#000",
+      secondary: "rgb(44, 56, 126)",
     },
     info: {
       main: "rgb(222, 156, 238)",

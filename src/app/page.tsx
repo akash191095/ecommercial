@@ -1,10 +1,10 @@
-import { Typography } from "@mui/material";
+import Inventory from "@/containers/Inventory/Inventory";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Typography variant="h1">Hello!</Typography>
+      <Inventory />
     </main>
   );
 }

@@ -2,3 +2,9 @@ html,
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+.container {
+  max-width: 1250px;
+  display: block;
+  margin: 0 auto;
+}
