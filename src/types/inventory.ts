@@ -1,26 +1,25 @@
-import { PrimaryVariants } from "./product";
-
-export type Row = {
-  value: string | number;
-  colorList?: string[];
-  align?: "center" | "left" | "right" | "justify" | "inherit" | undefined;
-  type?: "text" | "colorList";
-  prefix?: string;
-};
+import { ModifiedProducts, ProductsPayload } from "./product";
 
 export type CustomCollapsableTableProps = {
-  columns: {
-    align?: "center" | "left" | "right" | "justify" | "inherit" | undefined;
-    name: string;
-  }[];
-  rows: {
-    rowData: Row[];
-    primaryVariants: PrimaryVariants[];
-    id: number;
-  }[];
+  products: ProductsPayload[];
 };
 
 export type RowProps = {
-  row: Row[];
-  primaryVariants: PrimaryVariants[];
+  product: ProductsPayload;
+  toggleEditingById: (id: number) => void;
+  updateModifiedProductById: (id: number, data: ModifiedProducts) => void;
+  allModifiedProducts: ModifiedProducts[];
+  modifiedProduct: ModifiedProducts | null;
+  getModifiedProductById: (id: number) => ModifiedProducts | undefined;
+  setModifiedProducts: React.Dispatch<React.SetStateAction<ModifiedProducts[]>>;
+};
+
+export type InventoryContextType = {
+  modifiedProducts: ModifiedProducts[];
+  setModifiedProducts: React.Dispatch<React.SetStateAction<ModifiedProducts[]>>;
+  toggleEditingById: (id: number) => void;
+  getModifiedProductById: (id: number) => ModifiedProducts | undefined;
+  updateModifiedProductById: (id: number, data: ModifiedProducts) => void;
+  products: ProductsPayload[];
+  setProducts: React.Dispatch<React.SetStateAction<ProductsPayload[]>>;
 };
