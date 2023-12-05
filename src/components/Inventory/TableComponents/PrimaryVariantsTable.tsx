@@ -34,6 +34,7 @@ export default function PrimaryVariantsTable({
             <TableCell>Inventory</TableCell>
             <TableCell align="right">Price</TableCell>
             <TableCell align="right">Discount%</TableCell>
+            <TableCell align="right">Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -48,7 +49,7 @@ export default function PrimaryVariantsTable({
 
 function PrimaryVariantsRow({ row }: { row: PrimaryVariants }) {
   const [open, setOpen] = useState(false);
-  const { name, inventory, price, discountPercentage } = row;
+  const { name, inventory, price, discountPercentage, active } = row;
 
   return (
     <Fragment>
@@ -66,6 +67,7 @@ function PrimaryVariantsRow({ row }: { row: PrimaryVariants }) {
         <TableCell>{inventory}</TableCell>
         <TableCell align="right">${price}</TableCell>
         <TableCell align="right">{discountPercentage}</TableCell>
+        <TableCell align="right">{active ? "Active" : "Inactive"}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ padding: 0 }} colSpan={12}>

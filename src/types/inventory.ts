@@ -2,7 +2,6 @@ import { PrimaryVariants } from "./product";
 
 export type Row = {
   value: string | number;
-  id: number;
   colorList?: string[];
   align?: "center" | "left" | "right" | "justify" | "inherit" | undefined;
   type?: "text" | "colorList";
@@ -17,6 +16,7 @@ export type CustomCollapsableTableProps = {
   rows: {
     rowData: Row[];
     primaryVariants: PrimaryVariants[];
+    id: number;
   }[];
 };
 

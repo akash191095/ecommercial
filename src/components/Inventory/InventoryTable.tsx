@@ -12,6 +12,7 @@ export default function InventoryTable({ data }: { data: ProductsPayload[] }) {
           { name: "Discount%" },
           { name: "Colour" },
           { name: "Lead Time" },
+          { name: "Status" },
         ]}
         rows={data.map((item) => {
           const colorList: string[] =
@@ -20,33 +21,31 @@ export default function InventoryTable({ data }: { data: ProductsPayload[] }) {
             rowData: [
               {
                 value: item.title,
-                id: item.id,
               },
               {
                 value: item.inventory,
-                id: item.id,
               },
               {
                 value: item.price,
-                id: item.id,
                 prefix: "$",
               },
               {
                 value: item.discountPercentage,
-                id: item.id,
               },
               {
                 value: "",
-                id: item.id,
                 type: "colorList",
                 colorList,
               },
               {
                 value: item.leadTime,
-                id: item.id,
+              },
+              {
+                value: item.active ? "Active" : "Inactive",
               },
             ],
             primaryVariants: item?.primary_variants || [],
+            id: item.id,
           };
         })}
       />

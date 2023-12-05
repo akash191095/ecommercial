@@ -32,7 +32,7 @@ export default function CustomCollapsableTable({
           {rows.map((row) => {
             return (
               <Row
-                key={row.rowData[0].id}
+                key={row.id}
                 row={row.rowData}
                 primaryVariants={row.primaryVariants}
               />
