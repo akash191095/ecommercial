@@ -46,7 +46,7 @@ export default function Row({ row, primaryVariants }: RowProps) {
         </TableCell>
         {row.map((rowItems, index) => (
           <TableCell
-            key={`${index}-${rowItems.id}`}
+            key={`${index}-${rowItems.value}`}
             align={rowItems?.align || "left"}
           >
             {rowItems.type === "colorList"
