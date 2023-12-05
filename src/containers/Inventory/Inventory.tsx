@@ -2,6 +2,7 @@
 
 import { Box, Paper } from "@mui/material";
 
+import InventoryTable from "@/components/Inventory/InventoryTable";
 import Loader from "@/components/Loader";
 import React from "react";
 import useProducts from "@/hooks/useProducts";
@@ -15,7 +16,7 @@ export default function Inventory() {
   return (
     <Paper elevation={3}>
       <Box height="100%" width="100%" px={3} py={5} mt={5}>
-        Inventory
+        <InventoryTable data={products} />
       </Box>
     </Paper>
   );
